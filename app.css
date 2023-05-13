@@ -190,6 +190,7 @@
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
+    font-size: 16px;
   }
   
   /* Change background color of buttons on hover */
@@ -205,7 +206,7 @@
   /* Style the tab content */
   .tabcontent {
     display: none;
-    padding: 6px 12px;
+    padding: 14px 16px;
     border: 1px solid #ffca9f; 
     border-top: none;
   }
