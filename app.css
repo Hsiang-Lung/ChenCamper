@@ -131,9 +131,11 @@
   
   .main-img {
     display: block;
-    width: 50%;
-    height: 50%;
-    height: auto;
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    max-height: 500px; /* adjust this value to control the maximum height of the main image */
     margin: 0 auto;
     cursor: pointer;
   }
@@ -197,10 +199,12 @@
   
   .thumb {
     display: block;
-    max-width: 100%;
-    height: auto;
     cursor: pointer;
     border: 2px solid transparent;
+    object-fit: cover;
+    object-position: center;
+    height: 120px; 
+    width: 100%; 
   }
   
   .thumb.active {
