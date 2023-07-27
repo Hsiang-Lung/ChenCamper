@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chen Camper</title>
+    <link rel="stylesheet" href="app.css">
+    <script src="app.js" defer></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth'
+        });
+        fetch(`https://docs.google.com/spreadsheets/d/1ANXPJI_LAgB4EVycHGCpnfWcgObeTMQYYVpMYJSaB9U/gviz/tq?tqx=out:json`)
+            .then(response => response.text())
+            .then(data => {
+            let json = JSON.parse(data.substr(47).slice(0, -2));
+            let events = json.table.rows.map(row => ({
+                title: row.c[0].v,
+                start: row.c[1].v,
+                end:   row.c[2].v
+            }));
+
+            calendar.addEventSource(events);
+            
+            });
+        calendar.render();
+        });
+    </script>
+  </head>
+  <body>
+    <header>
+    <h1>Chen Camper</h1>
+      <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="verfuegbarkeit.html">Verfügbarkeit</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </header>    
+    <div id="calendar"></div>
+    <footer>
+      <a href="DSGVO_ChenCamper-1.pdf" style="color: white;" target="_blank">Datenschutzerklärung</a>
+      <p>Copyright &copy; ChenChamper.
+    </footer>
+  </body>
+</html>

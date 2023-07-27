@@ -62,6 +62,7 @@
   }
   
   nav ul li a {
+    font-size: 28px;
     color: #fff;
   }
   
@@ -114,6 +115,31 @@
     max-width: 70%;
     overflow: hidden;
   }  
+  
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    max-width: 100%;
+  }
+  
+  .container img {
+    max-width: 98%;
+    height: auto;
+  }
+  
+  .container h2 {
+    font-size: 28px;
+    margin: 0;
+  }
+
+  /* Kalender */
+  #calendar {
+    width: 90%; 
+    margin: 0 auto;  
+  }
 
   /* Bilderslider */
   .slider {
