@@ -256,3 +256,16 @@
     padding: 10px;
     text-align: center;
   }
+
+  @media (max-width: 767px) {
+    .qr-code {
+      max-width: 100%; /* Adjust as needed */
+    }
+  }
+
+  /* For tablets and larger devices */
+  @media (min-width: 768px) {
+    .qr-code {
+      max-width: 30%; /* Adjust as needed */
+    }
+  }
